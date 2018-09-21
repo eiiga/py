@@ -36,7 +36,7 @@ canvas.pack()
 l_name = tk.Label(base, text="エイ")
 l_name.place(x=30, y=30)
 l_level = tk.Label(base, text="Lv.：")
-l_level.place(x=50, y=30)
+l_level.place(x=70, y=30)
 
 #入力値を保持
 int_exp = tk.IntVar()
@@ -47,7 +47,7 @@ l_exp.place(x=0, y=60)
 tx_exp = tk.Entry(base, textvariable=int_exp)
 tx_exp.place(x=50, y=60)
 btn_exp = tk.Button(base, text="セーブ", command=result)
-btn_exp.place(x=150, y=55)
+btn_exp.place(x=150, y=90)
 
 #ロード
 btn_load = tk.Button(base, text="ロード", command=load)

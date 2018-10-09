@@ -23,7 +23,7 @@ def result():
 def load():
     sh_level = pd.read_csv("level.csv", header=None, index_col=None)
     l_level_num = tk.Label(base, text=str(sh_level.iloc[0][0]))
-    l_level_num.place(x=80, y=30)
+    l_level_num.place(x=100, y=30)
 
 
 #ウィンドウの設定

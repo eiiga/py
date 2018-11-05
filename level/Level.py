@@ -17,6 +17,8 @@ def result():
         df_level = pd.DataFrame([[str(int_level)]])
         df_level.to_csv("level.csv", index=False, header=False)
     else:
+        int_rest_exp = int_max_exp - int_total_exp
+        msg.showinfo("お知らせ", "次のレベルまで" + str(int_rest_exp))
         df_exp = pd.DataFrame([[str(int_total_exp)]])
         df_exp.to_csv("exp.csv", index=False, header=False)
 

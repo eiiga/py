@@ -1,0 +1,8 @@
+#encoding:utf-8
+import requests
+import pprint
+
+api_url = 'http://weather.livedoor.com/forecast/webservice/json/v1'
+payload = {'city':'130010'}
+weather_data = requests.get(api_url, params=payload).json()
+print(weather_data['forecasts'][0]['dateLabel'] + 'の天気は、' + weather_data['forecasts'][0]['telop'])

@@ -6,19 +6,19 @@ import pandas as pd
 def result():
     #経験値を取得
     sh_exp = pd.read_csv("exp.csv", header=None, index_col=None)
-    
+
     #レベルを取得
     sh_level = pd.read_csv("level.csv", header=None, index_col=None)
-    
+
     #入力した経験値と現在の経験値の和を求める
     int_total_exp = int_exp.get() + int(sh_exp.iloc[0][0])
-    
+
     #レベルをint型に変換
     sh_level.iloc[0][0] = sh_level.iloc[0][0].astype('int')
-    
+
     #経験値の上限を設定
     int_max_exp = sh_level.iloc[0][0] * 5
-    
+
     #上限の経験値を上回った場合レベルアップのメッセージを表示
     if int_total_exp >= int_max_exp:
         msg.showinfo("お知らせ", "レベルアップ！！")
@@ -28,7 +28,7 @@ def result():
         int_level = sh_level.iloc[0][0] + 1
         df_level = pd.DataFrame([[str(int_level)]])
         df_level.to_csv("level.csv", index=False, header=False)
-        
+
     #上限の経験値を上回らなかった場合、次のレベルまでの経験値をメッセージで表示
     else:
         int_rest_exp = int_max_exp - int_total_exp
